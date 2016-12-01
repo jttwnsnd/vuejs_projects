@@ -6,12 +6,20 @@
   </head>
   <body>
     <div id="exercise">
-      <!-- Fill the <p> below with your name and age - using interpolation-->
-      <p>VueJS is pretty cool - YOUR_NAME (YOUR_AGE)</p>
-      <!-- Output your age multiplied by 3 -->
-      <p>YOUR_AGE * 3</p>
-      <!-- Call a function to output a random float between 0 and 1 -->
-      <p>RANDOM # BETWEEN 0 AND 1</p>
+      <!-- 1. Fill the <p> below with your name and age - using interpolation-->
+      <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+      <!-- 2. Output your age multiplied by 3 -->
+      <p>{{age * 3}}</p>
+      <!-- 3. Call a function to output a random float between 0 and 1 -->
+      <p> {{ randomInt() }} </p>
+      <!-- 4. Search any image on Google and output it here by binding the "src" attribute -->
+      <div>
+        <img v-bind:src="image" alt="">
+      </div>
+      <!-- 5. Pre-populate this input with your name (set the "value" attribute) -->
+      <div>
+        <input v-bind:value="name" type="text">
+      </div>
     </div>
 
     <script src="scripts.js"></script>
