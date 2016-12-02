@@ -42,17 +42,26 @@
 //   }
 // })
 
+// exercise 2 Vue
+// new Vue({
+//   el: "#exercise2",
+//   data: {
+//     value: ''
+//   },
+//   methods: {
+//     showAlert: function() {
+//       alert('Alert shown!');
+//     },
+//     storeValue: function(event) {
+//       this.value = event.target.value;
+//     }
+//   }
+// })
+
+// Two way data binding
 new Vue({
-  el: "#exercise2",
+  el: '#app',
   data: {
-    value: ''
-  },
-  methods: {
-    showAlert: function() {
-      alert('Alert shown!');
-    },
-    storeValue: function(event) {
-      this.value = event.target.value;
-    }
+    name: 'JT'
   }
 })
