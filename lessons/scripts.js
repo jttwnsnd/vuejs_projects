@@ -46,5 +46,16 @@ new Vue({
   el: "#exercise2",
   data: {
     value: ''
+  },
+  methods: {
+    showAlert: function() {
+      alert('Alert shown!');
+    },
+    storeValue: function(event) {
+      this.value = event.target.value;
+    },
+    storeOnEnter: function(event) {
+      this.value = event.target.value;
+    }
   }
 })

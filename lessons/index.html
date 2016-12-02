@@ -44,18 +44,18 @@
     <div id="exercise2">
       <!-- 1. Show an alert when the button is pressed. -->
       <div>
-        <button>Show Alert</button>
+        <button v-on:click="showAlert">Show Alert</button>
       </div>
 
       <!-- 2. Listen to the 'keydown' event and store the value in a data property (hint: event.target.value gives you the value) -->
       <div>
-        <input type="text">
+        <input type="text" v-on:keydown="storeValue">
         <p>{{ value }}</p>
       </div>
 
       <!-- 3. Adjust the example from 2) to only fire if the "keydown" event is the ENTER key -->
       <div>
-        <input type="text">
+        <input type="text" v-on:keydown.enter="storeOnEnter">
         <p>{{ value }}</p>
       </div>
     </div>
