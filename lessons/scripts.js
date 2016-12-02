@@ -8,6 +8,9 @@ new Vue({
   methods: {
     randomInt: function(){
       return Math.round(Math.random());
+    },
+    newName: function(event){
+      this.name = event.target.value;
     }
   }
 })
