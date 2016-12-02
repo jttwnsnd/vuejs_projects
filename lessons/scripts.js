@@ -53,9 +53,6 @@ new Vue({
     },
     storeValue: function(event) {
       this.value = event.target.value;
-    },
-    storeOnEnter: function(event) {
-      this.value = event.target.value;
     }
   }
 })
