@@ -8,7 +8,8 @@
     <div id="exercise">
       <!-- 1. Fill the <p> below with your name and age - using interpolation-->
       <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
-      <input type="text" v-on:input="newName">
+      <span>Name: </span><input type="text" v-on:input="newName">
+      <span>Age: </span><input type="text" v-on:input="newAge">
       <!-- 2. Output your age multiplied by 3 -->
       <p>{{age * 3}}</p>
       <!-- 3. Call a function to output a random float between 0 and 1 -->

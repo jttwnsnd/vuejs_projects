@@ -11,6 +11,9 @@ new Vue({
     },
     newName: function(event){
       this.name = event.target.value;
+    },
+    newAge: function(event){
+      this.age = event.target.value;
     }
   }
 })
