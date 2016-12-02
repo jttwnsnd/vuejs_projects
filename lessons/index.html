@@ -29,13 +29,35 @@
         <input v-bind:value="name" type="text">
       </div>
     </div> -->
+
+    <!-- Lessons on events
     <div id="app"  v-on:mousemove="updateCoordinates">
-      <!-- $event is a special thing in VueJS-->
+      $event is a special thing in VueJS
       <button v-on:click="increase(5, $event)">Click me</button>
       <p>{{ counter }}</p>
       <p>Coordinates - {{ x }} / {{ y }}
-        <!-- An event modififer, that stops propagation -->
+        An event modififer, that stops propagation
       - <span v-on:mousemove.stop=''>DEAD ZONE</span></p>
+      <input type="text" v-on:keyup.enter.space="alertMe">
+    </div> -->
+
+    <div id="exercise2">
+      <!-- 1. Show an alert when the button is pressed. -->
+      <div>
+        <button>Show Alert</button>
+      </div>
+
+      <!-- 2. Listen to the 'keydown' event and store the value in a data property (hint: event.target.value gives you the value) -->
+      <div>
+        <input type="text">
+        <p>{{ value }}</p>
+      </div>
+
+      <!-- 3. Adjust the example from 2) to only fire if the "keydown" event is the ENTER key -->
+      <div>
+        <input type="text">
+        <p>{{ value }}</p>
+      </div>
     </div>
 
     <script src="scripts.js"></script>
