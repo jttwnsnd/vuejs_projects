@@ -5,23 +5,37 @@
     <script src="vue.js"></script>
   </head>
   <body>
-    <div id="exercise">
-      <!-- 1. Fill the <p> below with your name and age - using interpolation-->
+
+    <!-- first lesson segment -->
+    <!-- <div id="exercise">
+      1. Fill the <p> below with your name and age - using interpolation
       <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
-      <span>Name: </span><input type="text" v-on:input="newName">
-      <span>Age: </span><input type="text" v-on:input="newAge">
-      <!-- 2. Output your age multiplied by 3 -->
-      <p>{{age * 3}}</p>
-      <!-- 3. Call a function to output a random float between 0 and 1 -->
-      <p> {{ randomInt() }} </p>
-      <!-- 4. Search any image on Google and output it here by binding the "src" attribute -->
       <div>
-        <img v-bind:src="image" alt="">
+        <span>Name: </span><input type="text" v-on:input="newName">
       </div>
-      <!-- 5. Pre-populate this input with your name (set the "value" attribute) -->
+      <div>
+        <span>Age: </span><input type="text" v-on:input="newAge">
+      </div>
+      2. Output your age multiplied by 3
+      <p>{{age * 3}}</p>
+      3. Call a function to output a random float between 0 and 1
+      <p> {{ randomInt() }} </p>
+      4. Search any image on Google and output it here by binding the "src" attribute
+      <div>
+        <img v-bind:src="image" style="width:100px;height:auto">
+      </div>
+      5. Pre-populate this input with your name (set the "value" attribute)
       <div>
         <input v-bind:value="name" type="text">
       </div>
+    </div> -->
+    <div id="app"  v-on:mousemove="updateCoordinates">
+      <!-- $event is a special thing in VueJS-->
+      <button v-on:click="increase(5, $event)">Click me</button>
+      <p>{{ counter }}</p>
+      <p>Coordinates - {{ x }} / {{ y }}
+        <!-- An event modififer, that stops propagation -->
+      - <span v-on:mousemove.stop=''>DEAD ZONE</span></p>
     </div>
 
     <script src="scripts.js"></script>
