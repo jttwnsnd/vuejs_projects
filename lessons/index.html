@@ -91,7 +91,7 @@
       </div>
     </div> -->
 
-    <div id="app">
+    <!-- <div id="app">
       <div
         class="demo"
         :style="{'background-color': color}"
@@ -100,7 +100,7 @@
         class="demo"
         :style="myStyle"
         ></div>
-      <!-- styles written with :style will have browser prefixes added. works in all browsers that support VueJS -->
+      styles written with :style will have browser prefixes added. works in all browsers that support VueJS
       <div
         class="demo"
         :style="[myStyle, {height: width + 'px'}]"
@@ -108,6 +108,33 @@
       <hr>
       <input type="text" v-model="color">
       <input type="text" v-model="width">
+    </div> -->
+
+    <div id="exercise4">
+      <!-- 1. Start the effect with the button. the effect should alternate the "highlight" or "shrink" class on each new interval tick. (attach respective class to the div with id "effect" below) -->
+      <button @click="startEffect"></button>
+      <div id="effect"></div>
+      <!-- 2. create a couple of CSS classes and attach them via array syntax -->
+      <div>I got no class :(</div>
+      <!-- 3. Let the user enter a class (create some examples classes) and attach it -->
+      <div>
+        <input type="text">
+        <div></div>
+      </div>
+      <!-- 4. Let the user enter a class and enter true/false for another class (create some example classes) and attach these classes -->
+      <div>
+        <input type="text">
+        <input type="text">
+        <div></div>
+      </div>
+      <!-- 5. Repeat 3. but now with values for styles (instead of class names). Attach the respective styles. -->
+      <div>
+        <input type="text">
+        <div></div>
+      </div>
+      <!-- 6. Create a simple progress bar with setInterval and style bindings. Start it by hitting the button below. -->
+      <button>Start Progress</button>
+      <div></div>
     </div>
 
     <script src="scripts.js"></script>

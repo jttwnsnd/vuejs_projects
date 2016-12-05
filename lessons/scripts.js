@@ -93,6 +93,8 @@
 //     }
 //   }
 // })
+
+//reactive exercise
 // new Vue({
 //   el: "#exercise3",
 //   data: {
@@ -114,18 +116,34 @@
 //   }
 // })
 
+//dynamic styling of Vue project
+// new Vue({
+//   el: "#app",
+//   data: {
+//     color: 'gray',
+//     width: 100
+//   },
+//   computed: {
+//     myStyle: function() {
+//       return {
+//         backgroundColor: this.color,
+//         width: this.width + 'px'
+//       }
+//     }
+//   }
+// })
+
 new Vue({
-  el: "#app",
+  el: "#exercise4",
   data: {
-    color: 'gray',
-    width: 100
+
+  },
+  methods: {
+    startEffect: function(){
+      //setInterval
+    }
   },
   computed: {
-    myStyle: function() {
-      return {
-        backgroundColor: this.color,
-        width: this.width + 'px'
-      }
-    }
+
   }
 })
