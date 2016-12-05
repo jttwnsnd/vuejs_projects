@@ -93,23 +93,39 @@
 //     }
 //   }
 // })
+// new Vue({
+//   el: "#exercise3",
+//   data: {
+//     value: 0
+//   },
+//   computed: {
+//     result: function(){
+//       return this.value >= 37 ? "Made it" : "No there yet"
+//     }
+//   },
+//   watch: {
+//     result : function(){
+//       var vm = this;
+//       setTimeout(function(){
+//         console.log("fired off")
+//         vm.value = 0;
+//       }, 5000)
+//     }
+//   }
+// })
+
 new Vue({
-  el: "#exercise3",
+  el: "#app",
   data: {
-    value: 0
+    attachRed: false,
+    attachGreen: false
   },
   computed: {
-    result: function(){
-      return this.value >= 37 ? "Made it" : "No there yet"
-    }
-  },
-  watch: {
-    result : function(){
-      var vm = this;
-      setTimeout(function(){
-        console.log("fired off")
-        vm.value = 0;
-      }, 5000)
+    divClasses: function() {
+      return{
+        red: this.attachRed,
+        blue: !this.attachRed
+      }
     }
   }
 })
