@@ -94,15 +94,20 @@
     <div id="app">
       <div
         class="demo"
+        :style="{'background-color': color}"
         ></div>
       <div
         class="demo"
+        :style="myStyle"
         ></div>
+      <!-- styles written with :style will have browser prefixes added. works in all browsers that support VueJS -->
       <div
         class="demo"
+        :style="[myStyle, {height: width + 'px'}]"
         ></div>
       <hr>
       <input type="text" v-model="color">
+      <input type="text" v-model="width">
     </div>
 
     <script src="scripts.js"></script>
