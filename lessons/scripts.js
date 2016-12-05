@@ -72,24 +72,44 @@
 //closures require you to either set the this object as a variable, or use ES6 arrow functions.
 //v-on: can be replaced with an @ symbol. so v-on:click="function" can now be @click="function"
 //v-bind also gets a shortcut. v-bind:href="link" can now be :href="link "
+// new Vue({
+//   el: "#app",
+//   data: {
+//     counter: 0
+//   },
+//   computed: {
+//     output: function(){
+//       return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+//     }
+//   },
+//   watch: {
+//     counter: function(value ) {
+//
+//     }
+//   },
+//   methods: {
+//     result: function(){
+//       return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+//     }
+//   }
+// })
 new Vue({
-  el: "#app",
+  el: "#exercise3",
   data: {
-    counter: 0
+    value: 0
   },
   computed: {
-    output: function(){
-      return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+    result: function(){
+      return this.value >= 37 ? "Made it" : "No there yet"
     }
   },
   watch: {
-    counter: function(value ) {
-
-    }
-  },
-  methods: {
-    result: function(){
-      return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+    result : function(){
+      var vm = this;
+      setTimeout(function(){
+        console.log("fired off")
+        vm.value = 0;
+      }, 5000)
     }
   }
 })
