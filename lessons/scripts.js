@@ -136,14 +136,41 @@
 new Vue({
   el: "#exercise4",
   data: {
-
+    effectClasses: {
+      highlight: true,
+      shrink: false
+    },
+    userClass: '',
+    isVisible: true,
+    myStyles: {
+      width:'100px',
+      height:'100px',
+      backgroundColor: 'gray'
+    },
+    progressBar: {
+      width: '0px',
+      backgroundColor: 'red'
+    }
   },
   methods: {
     startEffect: function(){
+      var vm = this;
       //setInterval
+      setInterval(function(){
+        vm.effectClasses.highlight = !vm.effectClasses.highlight;
+        vm.effectClasses.shrink = !vm.effectClasses.shrink;
+      }, 1000)
+    },
+    startProgress: function(){
+      var vm = this;
+      var width = 0;
+      setInterval(function(){
+        width = width + 10;
+        if (width == 210){
+          width = 200;
+        }
+        vm.progressBar.width = width + 'px';
+      },500)
     }
-  },
-  computed: {
-
   }
 })
