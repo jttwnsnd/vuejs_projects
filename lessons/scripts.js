@@ -59,9 +59,31 @@
 // })
 
 // Two way data binding
+// new Vue({
+//   el: '#app',
+//   data: {
+//     name: 'JT'
+//   }
+// })
+
+// reactivity
+//important! everything stored in computed can be used like things sotred in data. computed will analyze the code and only run when needed, where methods will run all the time, even if it is not needed.
 new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    name: 'JT'
+    counter: 0
+  },
+  computed: {
+    output: function(){
+      return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+    }
+  },
+  watch: {
+    
+  },
+  methods: {
+    result: function(){
+      return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+    }
   }
 })
