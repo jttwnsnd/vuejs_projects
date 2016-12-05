@@ -67,7 +67,11 @@
 // })
 
 // reactivity
-//important! everything stored in computed can be used like things sotred in data. computed will analyze the code and only run when needed, where methods will run all the time, even if it is not needed.
+//important! everything stored in computed can be used like things sotred in data. computed will analyze the code and only run when needed, where methods will run all the time, even if it is not needed. computed are synchronous. best practice, use this when possible. It's cached, and only runs when necessary.
+//watch executes code upon data changes. can be asynchronous.
+//closures require you to either set the this object as a variable, or use ES6 arrow functions.
+//v-on: can be replaced with an @ symbol. so v-on:click="function" can now be @click="function"
+//v-bind also gets a shortcut. v-bind:href="link" can now be :href="link "
 new Vue({
   el: "#app",
   data: {
@@ -79,7 +83,9 @@ new Vue({
     }
   },
   watch: {
-    
+    counter: function(value ) {
+
+    }
   },
   methods: {
     result: function(){
