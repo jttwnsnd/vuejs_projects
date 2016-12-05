@@ -118,7 +118,7 @@ new Vue({
   el: "#app",
   data: {
     attachRed: false,
-    attachGreen: false
+    color: 'green'
   },
   computed: {
     divClasses: function() {

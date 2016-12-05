@@ -98,13 +98,14 @@
         :class="divClasses"></div>
       <div
         class="demo"
-        @click="attachGreen = !attachGreen"
-        :class="{green: attachGreen}"
+        :class="{red: attachRed}"
         ></div>
       <div
         class="demo"
-        :class="divClasses"
+        :class="[color, {red: attachRed}]"
       ></div>
+      <hr>
+      <input type="text" v-model="color">
     </div>
 
     <script src="scripts.js"></script>
