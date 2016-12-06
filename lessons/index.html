@@ -110,35 +110,48 @@
       <input type="text" v-model="width">
     </div> -->
 
-    <div id="exercise4">
-      <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+    <!-- <div id="exercise4">
+      1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below)
       <div>
         <button @click="startEffect">Start Effect</button>
         <div id="effect" :class="effectClasses"></div>
       </div>
-      <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+      2) Create a couple of CSS classes and attach them via the array syntax
       <div :class="['wide', 'blue', 'tall']">I got no class :(</div>
-      <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+      3) Let the user enter a class (create some example classes) and attach it
       <div>
         <input type="text" v-model="userClass">
         <div :class="['visible', userClass]"></div>
       </div>
-      <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+      4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes
       <div>
         <input type="text" v-model="userClass">
         <input type="text" v-model="isVisible">
         <div :class="[{visible: isVisible}, userClass]"></div>
       </div>
-      <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+      5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.
       <div>
         <input type="text" v-model="myStyles.backgroundColor">
         <div :style="myStyles"></div>
       </div>
-      <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+      6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button.
       <div>
         <button @click="startProgress">Start Progress</button>
         <div :class="['progressBar']" :style="progressBar"></div>
       </div>
+    </div> -->
+
+  <!-- v-else will always refer to the latest v-if in front of it -->
+    <!-- <div id="app">
+      <p v-if="show">You can see me!</p>
+      <p v-else="">Now you can see me!</p>
+      <p>Do you also see me?</p>
+      <button @click="show = !show">Switch</button>
+    </div> -->
+    <div id="app">
+      <ul>
+        <li></li>
+      </ul>
     </div>
 
     <script src="scripts.js"></script>
