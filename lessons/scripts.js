@@ -178,6 +178,10 @@
 new Vue({
   el: "#app",
   data: {
-    show: true
+    ingredients: ['meat', 'fruit', 'cookies'],
+    persons: [
+      {name: 'JT', age: 27, color: 'red'},
+      {name: 'Haley', age: 'unknown', color: 'sky-blue'}
+    ]
   }
 })
