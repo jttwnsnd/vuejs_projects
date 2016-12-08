@@ -175,13 +175,23 @@
 //   }
 // })
 
-new Vue({
-  el: "#app",
+// new Vue({
+//   el: "#app",
+//   data: {
+//     ingredients: ['meat', 'fruit', 'cookies'],
+//     persons: [
+//       {name: 'JT', age: 27, color: 'red'},
+//       {name: 'Haley', age: 'unknown', color: 'sky-blue'}
+//     ]
+//   }
+// })
+
+new Vue ({
+  el: "#exercise1",
   data: {
-    ingredients: ['meat', 'fruit', 'cookies'],
-    persons: [
-      {name: 'JT', age: 27, color: 'red'},
-      {name: 'Haley', age: 'unknown', color: 'sky-blue'}
-    ]
+    show: true,
+    weapons: ["sword", "shield", "lance", "pistol", "greatsword"],
+    about: {title: "Lord of the Rings", author: 'J.R.R. Tolkiens', books: 3},
+    testObj: {name: "TESTOBJECT", data: [1.67, 1.33, 0.98, 2.21]}
   }
 })

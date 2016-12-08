@@ -148,16 +148,44 @@
       <p>Do you also see me?</p>
       <button @click="show = !show">Switch</button>
     </div> -->
-    <div id="app">
+    <!-- <div id="app">
       <ul>
-        <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ( {{ i }} )</li>
+        keys are used to help Vuejs keep track and insert elements in their proper place.
+        <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ( {{ i }} )</li>
       </ul>
+      <button @click="ingredients.push('spice')"></button>
       <hr>
       <ul>
         <li v-for="person in persons">
           <div v-for="(value, key, index) in person"> {{ key }} : {{ value }} : {{ index }}</div>
         </li>
       </ul>
+    </div> -->
+
+    <div id="exercise1">
+      <!-- 1. Hook up the button to toggle the display of the two paragraphs. Use both v-if and v-show and inspect the elements to see the difference. -->
+      <div>
+        <button @click="show = !show">Toggle</button>
+        <p v-if="show">Either you see me...</p>
+        <p v-show="!show">...or me</p>
+      </div>
+      <!-- 2. Output an <ul> of an array elements of your choice. Also print out the index of the each element. -->
+      <ul>
+        <li v-for="(weapon, i) in weapons">{{ i }} : {{ weapon }}</li>
+      </ul>
+      <!-- 3. Print all key-value pairs of the following object: {title: "Lord of the Rings", author: 'J.R.R. Tolkiens', books: 3}. Also print the index -->
+      <ul>
+        <li v-for="(value, key, i) in about">{{ i }} ) {{ key }} : {{ value }}</li>
+      </ul>
+      <!-- 4. Print the following object (only the values) and also create a nested loop for the array: {name: "TESTOBJECT", data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if for this) -->
+       <li v-for="(value, key) in testObj">
+         <template v-if="Array.isArray(value)">
+           <div v-for="number in value">{{ number }}</div>
+         </template>
+          <template v-else>
+            <div>{{ value }}</div>
+          </template>
+       </li>
     </div>
 
     <script src="scripts.js"></script>
