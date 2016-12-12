@@ -33,8 +33,8 @@
     </section>
     <section v-if="gameStart" class="row controls">
         <div class="small-12 columns">
-            <button id="attack" @click="attack(0)">ATTACK</button>
-            <button id="special-attack" @click="attack(5)">SPECIAL ATTACK</button>
+            <button id="attack" @click="attack()">ATTACK</button>
+            <button id="special-attack" @click="attack()">SPECIAL ATTACK</button>
             <button id="heal" @click="heal()">HEAL</button>
             <button id="give-up" @click="giveUp()">GIVE UP</button>
         </div>

@@ -61,19 +61,29 @@ new Vue({
       this.gameOver = false;
     },
     attack: function(mod){
-      this.monsterAtk = Math.ceil(Math.random() * 15);
-      this.playerAtk = Math.ceil(Math.random() * 10) + mod;
-      this.attacks.push({
-        who: 'player',
-        message: "Player attacks monster for " + this.playerAtk + " damage!"
-      });
+      this.monsterAtk = this.calculateDamage(5, 12);
       this.attacks.push({
         who: 'monster',
         message: "Monster attacks player for " + this.monsterAtk + " damage!"
       });
+      if(checkWin()){
+        return;
+      }
+      this.playerAtk = this.calculateDamage(3, 10);
+      this.attacks.push({
+        who: 'player',
+        message: "Player attacks monster for " + this.playerAtk + " damage!"
+      });
+      if(checkWin()){
+        return;
+      }
     },
+    specialAttack: function(){
+      this.monsterAtk = this.calculateDamage(5, 12);
+      this.playerAtk = this.calculateDamage(5, 12);
+    }
     heal: function(){
-      this.monsterAtk = Math.ceil(Math.random() * 10);
+      this.monsterAtk = this.calculateDamage(5, 12);
       var heal = Math.ceil(Math.random() * 15);
       this.player += heal
       this.attacks.push({
@@ -92,6 +102,31 @@ new Vue({
       this.monster = 100;
       this.gameStart = false;
       this.attacks = [];
+    },
+    checkWin: function(){
+      if(this.monster <= 0){
+        if(confirm('You win! New Game?')){
+          this.startGame();
+        }else{
+          this.gameStart = false;
+        }
+        return true;
+      }else if(this.player <= 0){
+        if(confirm('You lost! New Game?')){
+          this.startGame();
+        }else{
+          this.gameStart = false;
+        }
+        return true;
+      }
+      return false;
+    },
+    calculateDamage: function(min, max){
+      return Math.max(Math.floor(Math.random() * max) +1, min);
+
+    },
+    monsterAttack: function(min, max){
+
     }
   }
 })
