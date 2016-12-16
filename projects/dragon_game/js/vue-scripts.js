@@ -81,7 +81,7 @@ new Vue({
     specialAttack: function(){
       this.monsterAtk = this.calculateDamage(5, 12);
       this.playerAtk = this.calculateDamage(5, 12);
-    }
+    },
     heal: function(){
       this.monsterAtk = this.calculateDamage(5, 12);
       var heal = Math.ceil(Math.random() * 15);
