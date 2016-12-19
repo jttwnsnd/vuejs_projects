@@ -1,6 +1,6 @@
-# module_7
+# vue-cli
 
-> Module 7 lessons for Udemy course
+> A Vue.js project
 
 ## Build Setup
 
