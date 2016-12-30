@@ -1,11 +1,19 @@
 <template lang="html">
   <div class="">
-    <slot></slot>
+    <div class="">
+      <slot name="title"></slot>
+    </div>
+    <hr>
+    <div class="">
+      <slot name="quote">
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: []
+  data: {}
 
 }
 </script>
