@@ -1,5 +1,4 @@
 <template lang="html">
-  <div class="row">
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="panel panel-default">
         <div class="panel-body quote">
@@ -7,7 +6,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
