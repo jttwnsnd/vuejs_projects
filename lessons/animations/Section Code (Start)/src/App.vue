@@ -4,13 +4,23 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <h1>Animations</h1>
                 <hr>
+                <select v-model="alertAnimation">
+                  <option value="fade">Fade</option>
+                  <option value="slide">Slide</option>
+                </select>
                 <button type="button" class="btn btn-primary" name="button" @click="show = !show">Show Alert</button>
                 <br><br>
-                <!-- appear attribute doesn't apply to other css, like how I have assigned it below -->
-                <transition
-                  enter-active-class="animated bounce"
-                  leave-active-class="animated shake"
-                >
+                <transition :name="alertAnimation">
+                  <div
+                    class="alert alert-info"
+                    v-if="show">This is some info.</div>
+                </transition>
+                <transition :name="alertAnimation">
+                  <div
+                    class="alert alert-info"
+                    v-if="show">This is some info.</div>
+                </transition>
+                <transition :name="alertAnimation" appear>
                   <div
                     class="alert alert-info"
                     v-if="show">This is some info.</div>
@@ -25,7 +35,8 @@
     export default {
         data() {
             return {
-              show: true
+              show: true,
+              alertAnimation: 'fade'
             }
         }
     }
