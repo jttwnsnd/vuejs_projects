@@ -10,21 +10,12 @@
                 </select>
                 <button type="button" class="btn btn-primary" name="button" @click="show = !show">Show Alert</button>
                 <br><br>
-                <transition :name="alertAnimation">
-                  <div
-                    class="alert alert-info"
-                    v-if="show">This is some info.</div>
+                
+                <transition :name="alertAnimation" appear mode="out-in">
+                  <div class="alert alert-info" v-if="show" key="info">This is some info.</div>
+                  <div class="alert alert-warning" v-else key="warning">this is some warning</div>
                 </transition>
-                <transition :name="alertAnimation">
-                  <div
-                    class="alert alert-info"
-                    v-if="show">This is some info.</div>
-                </transition>
-                <transition :name="alertAnimation" appear>
-                  <div
-                    class="alert alert-info"
-                    v-if="show">This is some info.</div>
-                </transition>
+
 
             </div>
         </div>
