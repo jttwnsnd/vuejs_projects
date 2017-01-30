@@ -10,25 +10,43 @@
                 </select>
                 <button type="button" class="btn btn-primary" name="button" @click="show = !show">Show Alert</button>
                 <br><br>
-                
+
                 <transition :name="alertAnimation" appear mode="out-in">
                   <div class="alert alert-info" v-if="show" key="info">This is some info.</div>
                   <div class="alert alert-warning" v-else key="warning">this is some warning</div>
                 </transition>
+                <button type="button" name="button" class="btn btn-primary" @click="load = !load">Load / Remove Element</button>
+                <br><br>
+                <transition>
+                  <div class="" style="width: 100px; height: 100px; background-color: lightgreen" v-if="load">
 
-
+                  </div>
+                </transition>
+                <hr>
+                <button type="button" name="button" class="btn btn-success">Toggle Components</button>
+                <br>
+                <component :is="selectedComponent"></component>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import DangerAlert from './DangerAlert.vue';
+    import SuccessAlert from './SuccessAlert.vue';
+
     export default {
         data() {
             return {
               show: true,
-              alertAnimation: 'fade'
+              load: true,
+              alertAnimation: 'fade',
+              selectedComponent: 'app-success-alert'
             }
+        },
+        components: {
+          appDangerAlert: DangerAlert,
+          appSuccessAlert: SuccessAlert
         }
     }
 </script>
