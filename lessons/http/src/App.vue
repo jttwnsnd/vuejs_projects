@@ -30,20 +30,22 @@
             username: '',
             email: ''
           },
-          users: []
+          users: [],
+          resource: {}
         }
       },
       methods: {
         submit(){
-          this.$http.post('https://vuejs-http-b4077.firebaseio.com/data.json', this.user)
-            .then(response => {
-              console.log(response);
-            }, error=>{
-              console.log(error);
-            });
+          // this.$http.post('data.json', this.user)
+          //   .then(response => {
+          //     console.log(response);
+          //   }, error=>{
+          //     console.log(error);
+          //   });
+          this.resource.save({}, this.user);
         },
         fetchData(){
-          this.$http.get('https://vuejs-http-b4077.firebaseio.com/data.json')
+          this.$http.get('data.json')
             .then(response => {
               return response.json();
             })
@@ -55,6 +57,15 @@
               this.users = resultArray;
             })
         }
+      },
+      created(){
+        const customActions = {
+          saveAlt: {
+            method: "POST",
+            url: 'alternative'
+          }
+        }
+        this.resource = this.$resource('data.json', {})
       }
     }
 </script>
