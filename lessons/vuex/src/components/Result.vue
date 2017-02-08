@@ -1,20 +1,19 @@
 <template>
   <div class="">
-    <p>Counter is: {{ counter }}</p>
-    <p>Counter has had {{ clicks }}</p>
+    <p>Counter is: {{ doubleCounter }}</p>
+    <p>Counter has had {{ stringCounter }}</p>
   </div>
 
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
-        computed: {
-          counter(){
-            return this.$store.getters.doubleCounters;
-          },
-          clicks(){
-            return this.$store.getters.stringCounter;
-          }
-        }
+      computed: {
+        ...mapGetters([
+          'doubleCounter',
+          'stringCounter'
+        ])
+      }
     }
 </script>
