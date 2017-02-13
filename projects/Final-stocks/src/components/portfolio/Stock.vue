@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           {{ stock.name }}
-          <small>(Bought Price: {{ stock.boughtPrice }} | Current Price: {{ stock.price }} | {{ stock.quantity}})</small>
+          <small>( Bought Price: {{ stock.boughtPrice }} | Current Price: {{ stock.price }} | Quantity: {{ stock.quantity}} )</small>
         </h3>
       </div>
       <div class="panel-body">
@@ -13,6 +13,7 @@
             class="form-control"
             type="number"
             v-model="quantity"
+            :class="{sell: selling}"
             placeholder="Quantity">
         </div>
         <div class="pull-right">
@@ -41,6 +42,9 @@ export default {
   computed: {
     insufficientQuantity() {
       return this.quantity > this.stock.quantity;
+    },
+    selling(){
+      return this.stock.boughtPrice < this.stock.price;
     }
   },
   methods: {
@@ -60,5 +64,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+
+.sell{
+  border: 1px solid lightgreen;
+}
 </style>
