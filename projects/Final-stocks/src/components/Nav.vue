@@ -18,6 +18,7 @@
           <router-link to="/portfolio" tag="li" active-class="active"><a>Portfolio</a></router-link>
           <router-link to="/stocks" tag="li" active-class="active"><a>Stocks</a></router-link>
         </ul>
+        <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">End Day</a></li>
           <li class="dropdown">
@@ -27,7 +28,6 @@
               <li><a href="#">Load Data</a></li>
             </ul>
           </li>
-          <li><a href="#">Link</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -36,6 +36,11 @@
 
 <script>
 export default {
+  computed: {
+    funds() {
+      return this.$store.getters.funds;
+    }
+  }
 }
 </script>
 
