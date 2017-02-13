@@ -13,8 +13,10 @@
     export default {
       components: {
         appNav: Nav
+      },
+      created(){
+        this.$store.dispatch('initStocks');
       }
-
     }
 </script>
 
